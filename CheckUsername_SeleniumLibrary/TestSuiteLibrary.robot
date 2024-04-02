@@ -11,7 +11,7 @@ ${Login Dir 1}           DIR/CheckUsername_Python/screenshot/Login_1.png
 ${Login Dir 2}           DIR/CheckUsername_Python/screenshot/Login_2.png
 ${Popup Window Dir 1}    DIR/CheckUsername_Python/screenshot/PopupWindow_1.png
 ${Verify Dir 1}            DIR/CheckUsername_Python/screenshot/Verify_1.png
-${Logout Dir 1}            DIR/CheckUsername_Python/screenshot/Logout_2.png
+${Logout Dir 1}            DIR/CheckUsername_Python/screenshot/Logout_1.png
 
 
 *** Test Cases ***
