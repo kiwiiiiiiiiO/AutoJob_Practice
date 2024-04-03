@@ -7,7 +7,7 @@
 |# | Title | Description |
 |---|-------|----|
 |1| CheckUsername_SeleniumLibrary | 檢查 username 是否正確顯示 | 
-|2| CheckUsername_Python | 檢查 username 是否正確顯示 | 
+|2| CheckUsername_Python | 檢查 username 是否正確顯示，使用 Page Object Model 建立 | 
 
 ### Enviroment
 -----
