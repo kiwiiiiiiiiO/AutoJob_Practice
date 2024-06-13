@@ -4,14 +4,14 @@ Library         SeleniumLibrary
 Suite Teardown  Close Browser   
 
 *** Variables ***
-${HOST}          #url
-${USERNAME}      #username
-${PASSWORD}      #passsword
-${Login Dir 1}           DIR/CheckUsername_Python/screenshot/Login_1.png
-${Login Dir 2}           DIR/CheckUsername_Python/screenshot/Login_2.png
-${Popup Window Dir 1}    DIR/CheckUsername_Python/screenshot/PopupWindow_1.png
-${Verify Dir 1}            DIR/CheckUsername_Python/screenshot/Verify_1.png
-${Logout Dir 1}            DIR/CheckUsername_Python/screenshot/Logout_1.png
+${HOST}          None
+${USERNAME}      None
+${PASSWORD}      None
+${Login Dir 1}           None
+${Login Dir 2}           None
+${Popup Window Dir 1}    None
+${Verify Dir 1}            None
+${Logout Dir 1}            None
 
 
 *** Test Cases ***
@@ -35,29 +35,29 @@ Login
     Wait Until Page Contains Element    id:username
     Input Text    id:username    ${username} 
     Capture Page Screenshot    ${Login Dir 1} 
-    Click Element    xpath://button[@class="login-btn HOST pre-login"]
+    Click Element    xpath://button[@class="login"]
     Wait Until Element Is Visible   id:pwd
     Input Text    id:pwd   ${password}
     Capture Page Screenshot    ${Login Dir 2} 
-    Click Element    xpath://button[@class="login-btn HOST submit"]
+    Click Element    xpath://button[@class="login"]
 
 Handle popup window
     [Documentation]    Handle the popup window for updating
-    Sleep   25s    ## 彈出視窗需要一段時間(有時會超過20秒)才會跳出
-    Wait Until Element Is Visible    xpath://div[@id="ext-comp-1293"]
-    Wait Until Element Is Visible   xpath: //button[.//text() = "Close"] 
+    Sleep   25s
+    Wait Until Element Is Visible    xpath://div[@class="close"]
+    Wait Until Element Is Visible   xpath://button[@class="close"]
     Capture Page Screenshot   ${Popup Window Dir 1}
-    Click Element     xpath: //button[.//text() = "Close"] 
+    Click Element     xpath://button[@class="close"]
 
 Verify username
     [Documentation]    Verify the username has showed in the right position
     [Arguments]    ${username}
     Capture Page Screenshot   ${Verify Dir 1} 
-    Element Text Should Be    xpath://button[@id="ext-gen161"]    expected=${username}    message= Username is not showed correctly
+    Element Text Should Be    xpath://button[@class="username"]    expected=${username}    message= Username is not showed correctly
 
 Logout
     [Documentation]    Logout HOST
     Click Element     xpath://button[@id="ext-gen161"]
-    Wait Until Element Is Visible   xpath: //span[.//text() = "Logout"] 
+    Wait Until Element Is Visible   xpath://button[@class="logout"]
     Capture Page Screenshot    ${Logout Dir 1}
-    Click Element    xpath: //span[.//text() = "Logout"] 
+    Click Element    xpath://button[@class="logout"]
