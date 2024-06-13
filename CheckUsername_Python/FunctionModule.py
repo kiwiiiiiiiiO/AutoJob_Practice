@@ -8,7 +8,6 @@ class FunctionModule(ActionUtils):
     
     ROBOT_LIBRARY_SCOPE = 'GLOBAL'
     
-    # 把 locator 以 tuple 形態存儲成 FunctionModule 的 attribute
     username_text_field = (By.XPATH, 'username')
     next_button = (By.XPATH,'Login')
     password_text_field = (By.XPATH, 'pwd')
