@@ -12,7 +12,10 @@ ${Login Dir 2}           None
 ${Popup Window Dir 1}    None
 ${Verify Dir 1}            None
 ${Logout Dir 1}            None
-
+${Login XPATH}    None
+${Close XPATH}    None
+${Username XPATH}    None
+${Logout XPATH}    None
 
 *** Test Cases ***
 Multiple Process
@@ -27,7 +30,7 @@ Multiple Process
 Open HOST
     [Documentation]   Open HOST
     [Arguments]    ${url}
-    Open Browser  ${url}    browser=chrome  executable_path=CheckUsername_SeleniumLibrary\\chromedriver-win64\\chromedriver.exe
+    Open Browser  ${url}    browser=chrome  executable_path=None
 
 Login
     [Documentation]    Login HOST
@@ -35,29 +38,27 @@ Login
     Wait Until Page Contains Element    id:username
     Input Text    id:username    ${username} 
     Capture Page Screenshot    ${Login Dir 1} 
-    Click Element    xpath://button[@class="login"]
+    Click Element    ${Login XPATH}
     Wait Until Element Is Visible   id:pwd
     Input Text    id:pwd   ${password}
     Capture Page Screenshot    ${Login Dir 2} 
-    Click Element    xpath://button[@class="login"]
+    Click Element    ${Login XPATH}
 
 Handle popup window
     [Documentation]    Handle the popup window for updating
     Sleep   25s
-    Wait Until Element Is Visible    xpath://div[@class="close"]
-    Wait Until Element Is Visible   xpath://button[@class="close"]
+    Wait Until Element Is Visible   ${Close XPATH}
     Capture Page Screenshot   ${Popup Window Dir 1}
-    Click Element     xpath://button[@class="close"]
+    Click Element     ${Close XPATH}
 
 Verify username
     [Documentation]    Verify the username has showed in the right position
     [Arguments]    ${username}
     Capture Page Screenshot   ${Verify Dir 1} 
-    Element Text Should Be    xpath://button[@class="username"]    expected=${username}    message= Username is not showed correctly
+    Element Text Should Be    ${Username XPATH}    expected=${username}    message= Username is not showed correctly
 
 Logout
     [Documentation]    Logout HOST
-    Click Element     xpath://button[@id="ext-gen161"]
-    Wait Until Element Is Visible   xpath://button[@class="logout"]
+    Wait Until Element Is Visible   ${Logout XPATH}
     Capture Page Screenshot    ${Logout Dir 1}
-    Click Element    xpath://button[@class="logout"]
+    Click Element    x${Logout XPATH}
