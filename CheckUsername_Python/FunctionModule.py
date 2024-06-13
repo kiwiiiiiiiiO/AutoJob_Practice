@@ -9,14 +9,14 @@ class FunctionModule(ActionUtils):
     ROBOT_LIBRARY_SCOPE = 'GLOBAL'
     
     # 把 locator 以 tuple 形態存儲成 FunctionModule 的 attribute
-    username_text_field = (By.ID, 'username')
-    next_button = (By.XPATH,'//button[@class="login-btn HOST pre-login"]')
-    password_text_field = (By.ID, 'pwd')
-    submit_button = (By.XPATH, '//button[@class="login-btn HOST submit"]')
-    popup_window = (By.ID, 'ext-comp-1293')
-    popup_window_button = (By.XPATH, '//button[.//text() = "Close"] ')
-    username_button = (By.ID, 'ext-gen161')
-    logout_span = (By.XPATH, '//span[.//text() = "Logout"] ')
+    username_text_field = (By.XPATH, 'username')
+    next_button = (By.XPATH,'Login')
+    password_text_field = (By.XPATH, 'pwd')
+    submit_button = (By.XPATH, 'Submit')
+    popup_window = (By.XPATH, 'Popup window')
+    popup_window_button = (By.XPATH, 'Close')
+    username_button = (By.XPATH, 'Username')
+    logout_span = (By.XPATH, 'Logout Span)
 
     def __init__(self):
         self.driver = None
