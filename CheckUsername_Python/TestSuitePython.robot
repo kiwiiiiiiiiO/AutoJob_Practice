@@ -4,15 +4,15 @@ Library    FunctionModule.py
 
 
 *** Variables ***
-${HOST}                  #url
-${USERNAME}              #username
-${PASSWORD}              #password
-${Login Dir 1}           DIR/CheckUsername_Python/screenshot/Login_1.png
-${Login Dir 2}           DIR/CheckUsername_Python/screenshot/Login_2.png
-${Popup Window Dir 1}    DIR/CheckUsername_Python/screenshot/PopupWindow_1.png
-${Popup Window Dir 2}    DIR/CheckUsername_Python/screenshot/PopupWindow_2.png
-${Logout Dir 1}            DIR/CheckUsername_Python/screenshot/Logout_1.png
-${Logout Dir 2}            DIR/CheckUsername_Python/screenshot/Logout_2.png
+${HOST}                  None
+${USERNAME}              None
+${PASSWORD}              None
+${Login Dir 1}           None
+${Login Dir 2}           None
+${Popup Window Dir 1}    None
+${Popup Window Dir 2}    None
+${Logout Dir 1}            None
+${Logout Dir 2}            None
 
 *** Test Cases ***
 Multiple Process
